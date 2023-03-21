@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 
 //les propriétés de class et les methodes ne necessite pas de mot clé var let const ou function 
 export class FaceSnapComponent {
-  title: string;
-  description: string
-  createDate: Date;
-  snaps: number;
+  title!: string;
+  description!: string
+  createDate!: Date;
+  snaps!: number;
 }
