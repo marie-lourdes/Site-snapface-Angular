@@ -15,6 +15,7 @@ export class FaceSnapComponent  implements OnInit {
   description!: string
   createDate!: Date;
   snaps!: number;
+  imageUrl!: string;
 
 //Initialisation des propriétés avec la methode ngOnInit()
   ngOnInit() {
@@ -22,5 +23,6 @@ export class FaceSnapComponent  implements OnInit {
     this.description = "Mon meilleur ami depuis tout petit";
     this.createDate = new Date();
     this.snaps = 6;
+    this.imageUrl= "../../assets/book.jpg";
   }
 }
