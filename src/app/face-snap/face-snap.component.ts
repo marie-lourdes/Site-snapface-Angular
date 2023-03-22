@@ -15,7 +15,10 @@ export class FaceSnapComponent  implements OnInit {
   description!: string
   createDate!: Date;
   snaps!: number;
+  snapped!: boolean;
+  buttonText!: string;
   imageUrl!: string;
+ 
 
 //Initialisation des propriétés avec la methode ngOnInit()
   ngOnInit() {
@@ -23,12 +26,36 @@ export class FaceSnapComponent  implements OnInit {
     this.description = "Mon meilleur ami depuis tout petit";
     this.createDate = new Date();
     this.snaps = 6;
+    this.snapped = false;
+    this.buttonText = "oh snaps";
     this.imageUrl= "../../assets/book.jpg";
   }
 
   //methode pour ecouter l evenement click du boutton addsnap
   //la nomenclature veut que les methodes qui ecoute les evènement commence par on
-  onAddSnap() {
+  onSnap() {
+  console.log(this.snapped);
+
+    this.buttonText= this.snapped ? "Oops!yet snapped" : "oh snaps";
+    if(this.snapped) { // condidtion de if à true ar defaut
+      this.snaps--; 
+      this.snapped = false;  
+      console.log("button texte",this.buttonText);
+    } else {
+      this.snaps++;
+      this.snapped = true;
+      console.log("button texte",this.buttonText);
+    }
+
+    /*CORRIGÉ*/
+
+    /*if (this.buttonText === 'Oh Snap!') {
     this.snaps++;
-  }
+    this.buttonText = 'Oops, unSnap!';
+  } else {
+    this.snaps--;
+    this.buttonText = 'Oh Snap!';
+  }*/
+
+  } 
 }
