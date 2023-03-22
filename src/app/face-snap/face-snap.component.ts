@@ -35,9 +35,10 @@ export class FaceSnapComponent  implements OnInit {
   //la nomenclature veut que les methodes qui ecoute les evènement commence par on
   onSnap() {
   console.log(this.snapped);
-
+// evenement au click et verification de l image si elle est deja snapped et selon, on effectue une modication du texte du bouton avec le changement de valeur par defaut de this.snapped sur false
     this.buttonText= this.snapped ? "Oops!yet snapped" : "oh snaps";
     if(this.snapped) { // condidtion de if à true ar defaut
+      //si deja cliqué et snappé on desincremente le nombre de snaps
       this.snaps--; 
       this.snapped = false;  
       console.log("button texte",this.buttonText);
