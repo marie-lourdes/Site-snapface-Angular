@@ -25,4 +25,10 @@ export class FaceSnapComponent  implements OnInit {
     this.snaps = 6;
     this.imageUrl= "../../assets/book.jpg";
   }
+
+  //methode pour ecouter l evenement click du boutton addsnap
+  //la nomenclature veut que les methodes qui ecoute les evènement commence par on
+  onAddSnap() {
+    this.snaps++;
+  }
 }
