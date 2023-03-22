@@ -46,16 +46,5 @@ export class FaceSnapComponent  implements OnInit {
       this.snapped = true;
       console.log("button texte",this.buttonText);
     }
-
-    /*CORRIGÉ*/
-
-    /*if (this.buttonText === 'Oh Snap!') {
-    this.snaps++;
-    this.buttonText = 'Oops, unSnap!';
-  } else {
-    this.snaps--;
-    this.buttonText = 'Oh Snap!';
-  }*/
-
   } 
 }
