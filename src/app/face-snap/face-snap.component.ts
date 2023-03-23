@@ -1,5 +1,5 @@
 // import de l interface OnInit pour utliser la methode ngOnInit() pour initialiser les propriétés de FaceSnapComponent
-import { Component, OnInit } from '@angular/core'; 
+import { Component, OnInit, Input} from '@angular/core'; 
 import { FaceSnap} from '../models/face-snap.model';
 
 @Component({
@@ -12,6 +12,11 @@ import { FaceSnap} from '../models/face-snap.model';
 //implementation de l interface OnInit
 // le bang ! permet de promettre a Typescript qu on va initialiser les propriétés et de ne pas provoquer d erreur de console
 export class FaceSnapComponent  implements OnInit {
+  // la classe "FaceSnap" est un type de donnée qu'on declare à la proprieté faceSnap
+  //Pour que la propriété du child facecomponent puissent etre injecté depuis le parent nous utilisons le decorateur @input()
+  //@input() va crée une sorte de champs à la class et un attribut html au FaceComponent qui sera accessible depuis le component parent
+  // La valeur de ctte proprieté sera initialisé avec la valeur d une instance de classe du component parent avec l attribute binding ( de la balise personnalisé du child app-face-snap dans le template html de l AppComponent parent
+  @Input() snap!: FaceSnap;
   title!: string;
   description!: string
   createDate!: Date;
