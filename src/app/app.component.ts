@@ -12,8 +12,8 @@ export class AppComponent implements OnInit {
   
   // donc on le declare en Type pour ts et l intialiser avec ng OnInit avec les valeur de l instance de la classe
   ngOnInit() {
-    this.snap = new FaceSnap("test titre class", "description class model", new Date(), 0, false, "../../assets/book.jpg");
+    this.snap = new FaceSnap("test titre class", "description class model", new Date(), 0, "../../assets/book.jpg");
     console.log("snap instance model",this.snap);
-    this.snap2 = new FaceSnap("2eme instance", "description test 2eme instance", new Date(), 0, false, "../../assets/book-antique.jpg");
+    this.snap2 = new FaceSnap("2eme instance", "description test 2eme instance", new Date(), 0, "../../assets/book-antique.jpg");
   }
 }

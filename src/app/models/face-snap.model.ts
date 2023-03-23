@@ -31,6 +31,5 @@ export class FaceSnap {
             public description: string,
             public createDate: Date,
             public snaps: number,
-            public snapped: boolean,
             public imageUrl: string) {}
 }
