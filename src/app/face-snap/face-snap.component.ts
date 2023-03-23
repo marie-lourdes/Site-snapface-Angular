@@ -17,12 +17,10 @@ export class FaceSnapComponent  implements OnInit {
   //@input() va crée une sorte de champs à la class et un attribut html au FaceComponent qui sera accessible depuis le component parent
   // La valeur de ctte proprieté sera initialisé avec la valeur d une instance de classe du component parent avec l attribute binding ( de la balise personnalisé du child app-face-snap dans le template html de l AppComponent parent
   @Input() faceSnap!: FaceSnap;
-  @Input() facSnap!: FaceSnap;
+
  // on garde le bouton pour tous les faceSnap et on a enlevé les autres propriétes qui seront personnalisé avec les instances du model
   buttonText!: string;
  
- 
-
 //Initialisation des propriétés avec la methode ngOnInit()
   ngOnInit() {
   // mieux vaut creer les differentes instance de la classe depuis le app parent que dans le child facesnapcomponent ici car on devrait creer d autres div de facesnap compmonent dans le html
@@ -36,20 +34,20 @@ export class FaceSnapComponent  implements OnInit {
   //methode pour ecouter l evenement click du boutton addsnap
   //la nomenclature veut que les methodes qui ecoute les evènement commence par on
   onSnap() {
- /* 
- console.log(this.snapped);
+ 
+ console.log(this.faceSnap.snapped);
 // evenement au click et verification de l image si elle est deja snapped et selon, on effectue une modication du texte du bouton avec le changement de valeur par defaut de this.snapped sur false
-    this.buttonText= this.snapped ? "Oops!yet snapped" : "oh snaps";
-    if(this.snapped) { // condidtion de if à true ar defaut
+    this.buttonText= this.faceSnap.snapped ? "Oops!yet snapped" : "oh snaps";
+    if(this.faceSnap.snapped) { // condidtion de if à true ar defaut
       //si deja cliqué et snappé on desincremente le nombre de snaps
-      this.snaps--; 
-      this.snapped = false;  
+      this.faceSnap.snaps--; 
+      this.faceSnap.snapped = false;  
       console.log("button texte",this.buttonText);
     } else {
-      this.snaps++;
-      this.snapped = true;
+      this.faceSnap.snaps++;
+      this.faceSnap.snapped = true;
       console.log("button texte",this.buttonText);
     }
-    */
+    
   } 
 }

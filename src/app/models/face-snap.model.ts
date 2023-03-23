@@ -1,5 +1,5 @@
 export class FaceSnap {
-    // les bang ! ne sont pas necessaires pou promettre a typescript que nous allons initialiser ces propriétes typescript le comprend avec le constructor et l initialisation des propriétés par le constructor , 
+    // les bang ! ne sont pas necessaires pour promettre a typescript que nous allons initialiser ces propriétes, typescript le comprend avec le constructor et l initialisation des propriétés par le constructor , 
    
     /* title: string; // declare le type de valeur des propriétés en ts
     description: string
