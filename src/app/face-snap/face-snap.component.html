@@ -7,7 +7,7 @@
     Angular associe les valeurs des propriétés TypeScript aux attributs de l'élément HTML, et vous avez une image qui s'affiche ! -->
     <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title"/>
     <p>{{faceSnap.description}}</p>
-    <p>
+    <p *ngIf="faceSnap.snaps > 0">
         <button (click)="onSnap()">{{buttonText}}</button>
         {{faceSnap.snaps}}</p>
 </div>
