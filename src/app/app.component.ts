@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   snap4!: FaceSnap;
   snap5!: FaceSnap;
   
-  // donc on le declare en Type pour ts et l intialiser avec ng OnInit avec les valeur de l instance de la classe
+  // donc on le declare en Type pour ts et l intialiser avec ng OnInit avec les valeur de l instance de la classe crée avecd new
   ngOnInit() {
     this.snap = {
       title: "test titre class",
@@ -24,16 +24,35 @@ export class AppComponent implements OnInit {
       location: "Paris"
     }
     console.log("snap instance model",this.snap);
-    this.snap2 =  {
+    this.snap2 = {
       title: "2eme instance",
       description: "description test 2eme instance",
       createDate: new Date(), 
       snaps:5, 
-      imageUrl: "../../assets/book-antique.jpg"
+      imageUrl: "../../assets/book-antique.jpg",   
+    }
+    this.snap3 = {
+      title:"3eme instance", 
+      description:"description test 3eme instance",
+      createDate: new Date(), 
+      snaps:3, 
+      imageUrl: "../../assets/books.jpg",
       location: "Paris"
     }
-    this.snap3 = new FaceSnap("3eme instance", "description test 3eme instance", new Date(), 3, "../../assets/books.jpg");
-    this.snap4 = new FaceSnap("4eme instance", "description test 4eme instance", new Date(), 0, "../../assets/book-library.jpg");
-    this.snap5 = new FaceSnap("5eme instance", "description test 5eme instance", new Date(), 5, "../../assets/book-desk.jpg");
+    this.snap4 = {
+      title: "4eme instance", 
+      description:"description test 4eme instance",
+      createDate: new Date(), 
+      snaps:0, 
+      imageUrl:"../../assets/book-library.jpg",
+      location: "montagne" 
+    }
+    this.snap5 = {
+      title:"description test 5eme instance",
+      description:"description test 5me instance",
+      createDate: new Date(), 
+      snaps:5, 
+      imageUrl:"../../assets/book-desk.jpg" 
+    }
   }
 }
