@@ -29,7 +29,8 @@ export class AppComponent implements OnInit {
       description: "description test 2eme instance",
       createDate: new Date(), 
       snaps:5, 
-      imageUrl: "../../assets/book-antique.jpg",   
+      imageUrl: "../../assets/book-antique.jpg",  
+       
     }
     this.snap3 = {
       title:"3eme instance", 
