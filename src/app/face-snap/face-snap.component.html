@@ -5,7 +5,7 @@
     <!-- ajout du contenu rl de l image avec attribute binding:  des crochet aux attributs html car les valeurs des propriétés du faceSnapcomponent ne seront pas toujous des string
     comme pour imageUrl et title. Au lieu de melanger les types de valeur de ces attribut les crochet permettent une syntaxe unique
     Angular associe les valeurs des propriétés TypeScript aux attributs de l'élément HTML, et vous avez une image qui s'affiche ! -->
-    <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title"/>
+    <img *ngIf ="faceSnap.imageUrl" [src]="faceSnap.imageUrl" [alt]="faceSnap.title"/>
     <p>{{faceSnap.description}}</p>
     <p>Photo prise à {{faceSnap.location}}</p>
     <p *ngIf ="faceSnap.snaps > 0">

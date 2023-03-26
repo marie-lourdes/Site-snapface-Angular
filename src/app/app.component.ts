@@ -8,10 +8,6 @@ import { FaceSnap} from './models/face-snap.model';
 })
 export class AppComponent implements OnInit {
   snap!: FaceSnap;// la classe est un type de donnée,
-  snap2!: FaceSnap;
-  snap3!: FaceSnap;
-  snap4!: FaceSnap;
-  snap5!: FaceSnap;
   
   // donc on le declare en Type pour ts et l intialiser avec ng OnInit avec les valeur de l instance de la classe crée avecd new
   ngOnInit() {
