@@ -28,13 +28,13 @@ export class FaceSnapComponent  implements OnInit {
   //c'est moins maintenable , dans appComponent on va creer les instance et il suffit d injecter d autres balise personnalisé de facesnap component
   // et changer le nom de l instance cree dans appComponent dans l attribute binding de la balise de facesnapcomponent dans le parent appcomponent html
   //Qaund au element html du component on ne  cree pas de div supplemenataire , juste la valeur de la propriété facesnap qui change et sera l instance propre a cette balise avec ses propres valeur injecteur depuis le parent AppComponent
-   this.snapped = false; 
+   /*this.snapped = false; */
    this.buttonText = "oh snaps";    
   }
 
   //methode pour ecouter l evenement click du boutton addsnap
   //la nomenclature veut que les methodes qui ecoute les evènement commence par on
-  onSnap() {
+ /* onSnap() {
     console.log(this.snapped);
     // evenement au click et verification de l image si elle est deja snapped et selon, on effectue une modication du texte du bouton avec le changement de valeur par defaut de this.snapped sur false
         this.buttonText = this.snapped ? "Oops!yet snapped" : "oh snaps";
@@ -48,5 +48,5 @@ export class FaceSnapComponent  implements OnInit {
       this.snapped = true;
       console.log("button texte",this.buttonText);
     } 
-  } 
+  } */
 }
