@@ -27,7 +27,11 @@
         &:active {        
             transform: translate(1px, 1px);
             box-shadow: lightgray 0 0 5px;
-        }
+        }     
+    }
+    .button--bg-color {
+        background-color:#fff;
+        padding: 0.5rem 2rem;
     }
     &--snapped {
         background-color: rgba(lightgreen, 0.4);
