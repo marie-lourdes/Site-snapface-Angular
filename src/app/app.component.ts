@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
         title: "test titre class",
         description: "description class model",
         createDate: new Date(), 
-        snaps: 50,
+        snaps: 0,
         imageUrl: "../../assets/book.jpg",
         location: "Paris"
       },
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
         title: "2eme instance",
         description: "description test 2eme instance",
         createDate: new Date(), 
-        snaps: 5, 
+        snaps: 0, 
         imageUrl: "../../assets/book-antique.jpg",  
          
       },
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
         title:"3eme instance", 
         description:"description test 3eme instance",
         createDate: new Date(), 
-        snaps: 3, 
+        snaps: 0, 
         imageUrl: "../../assets/books.jpg",
         location: "Paris"
       },
@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
         title:"description test 5eme instance",
         description:"description test 5me instance",
         createDate: new Date(), 
-        snaps: 5, 
+        snaps: 0, 
         imageUrl:"../../assets/book-desk.jpg" 
       }
     ]

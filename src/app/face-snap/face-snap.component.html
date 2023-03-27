@@ -15,8 +15,19 @@
        
        <!--<span *ngIf ="faceSnap.snaps > 0" [ngStyle]="{color:'rgb(0,'+ faceSnap.snaps +',0)'}"> {{faceSnap.snaps}}</span>-->
 
-       <span *ngIf ="faceSnap.snaps > 0"> {{faceSnap.snaps}}</span>
+       <span *ngIf ="faceSnap.snaps >= 0"> {{faceSnap.snaps}}</span>    
     </p>
+    <!-- fonctionalité style dynamice l etoile devient de plus en plus vert en fonction du nombre de snapsqui augmente au clic
+    le nombre de face snaps est divisé par 100 pour qu il grossit pas trop et qu on puisse voir le vert augmenter-->
+    <p>
+        <button (click)="onButtonClick()"  [ngStyle]="{
+            color:'rgb(0,'+ faceSnap.snaps +',0)',
+            padding: '0.5rem 2rem',
+            fontSize: 1.3 + (faceSnap.snaps/100) + 'rem'
+        }"> * </button>
+        
+    </p>
+
 </div>
 
 
