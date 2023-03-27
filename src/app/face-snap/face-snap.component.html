@@ -8,9 +8,10 @@
     <img *ngIf ="faceSnap.imageUrl" [src]="faceSnap.imageUrl" [alt]="faceSnap.title"/>
     <p>{{faceSnap.description}}</p>
     <p>Photo prise à {{faceSnap.location}}</p>
-    <p *ngIf ="faceSnap.snaps > 0">
-        <button (click)="onSnap()">{{buttonText}}</button>
-        {{faceSnap.snaps}}</p>
+    <p>
+       <button (click)="onSnap()">{{buttonText}}</button>
+       <span *ngIf ="faceSnap.snaps > 0"> {{faceSnap.snaps}}</span>
+    </p>
 </div>
 
 
