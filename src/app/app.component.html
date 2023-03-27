@@ -8,7 +8,10 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- INTEGRATION DE LA BALISE DU COMPONENT FaceSnapComponent via son selector app-face-snap dans le component racine AppComponent-->
 <main class="app-main">
-    <app-face-snap *ngFor=" let snap of mySnaps" [faceSnap]="snap"></app-face-snap>
+    <app-face-snap  *ngFor=" let snap of mySnaps" [faceSnap]="snap" [ngStyle]="{
+        width: '40%',
+        margin: '3%'
+    }"></app-face-snap>
 </main>
 
 
