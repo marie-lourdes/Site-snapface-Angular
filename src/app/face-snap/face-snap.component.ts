@@ -36,8 +36,8 @@ export class FaceSnapComponent  implements OnInit {
   //la nomenclature veut que les methodes qui ecoute les evènement commence par on
 onSnap() {
     console.log(this.snapped);
+    //suppression des fonctionalites de desincrementation et de changement pour la fonctionalité du style dynamic au clic du bouton et de la couleur en fonction du nombre de snaps qui augmente
     // evenement au click et verification de l image si elle est deja snapped et selon, on effectue une modication du texte du bouton avec le changement de valeur par defaut de this.snapped sur false
-    
     /*this.buttonText = this.snapped ? "Oops!yet snapped" : "oh snaps";
     if(this.snapped) { // condidtion de if à true ar defaut,  la propriété snapped est à false par defaut associé au texte du bouton "oh snaps" defini par defaut ci dessus
       //si deja cliqué et snappé on desincremente le nombre de snaps

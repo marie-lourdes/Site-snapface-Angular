@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
         title: "test titre class",
         description: "description class model",
         createDate: new Date(), 
-        snaps: 1,
+        snaps: 50,
         imageUrl: "../../assets/book.jpg",
         location: "Paris"
       },

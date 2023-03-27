@@ -10,7 +10,9 @@
     <p>Photo prise à {{faceSnap.location}}</p>
     <p>
        <button (click)="onSnap()">{{buttonText}}</button>
-       <span *ngIf ="faceSnap.snaps > 0"> {{faceSnap.snaps}}</span>
+       <!-- fonctionalité style dynamic au clic la couleur green du rgb augmente au nombre de clic et du snaps qui augmente avec la methode onSnap()
+    a partir de 50 pour le green RGB, la couleur verte est visible , plus le nombre augmente plus le texte est vert-->
+       <span *ngIf ="faceSnap.snaps > 0" [ngStyle]="{color:'rgb(0,'+ faceSnap.snaps +',0)'}"> {{faceSnap.snaps}}</span>
     </p>
 </div>
 
