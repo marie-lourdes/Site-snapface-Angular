@@ -12,6 +12,7 @@ import { FaceSnap} from '../models/face-snap.model';
 //implementation de l interface OnInit
 // le bang ! permet de promettre a Typescript qu on va initialiser les propriétés et de ne pas provoquer d erreur de console
 export class FaceSnapComponent  implements OnInit {
+  
   // la classe "FaceSnap" est un type de donnée qu'on declare à la proprieté faceSnap
   //Pour que la propriété du child facecomponent puissent etre injecté depuis le parent nous utilisons le decorateur @input()
   //@input() va crée une sorte de champs à la class et un attribut html au FaceComponent qui sera accessible depuis le component parent

@@ -32,8 +32,18 @@
         }"> * </button>   
     </p>  
 </div>
-<h3> CurrencyPipe configuration EUR et 2eme configuration 'code' pour garder l encodage EUR au lieu du symbole €</h3>
+<h3> CurrencyPipe |currency => configuration EUR et 2eme configuration 'code' pour garder l encodage EUR au lieu du symbole €</h3>
+
+<!--CurrencyPipe arrondi par defaut le chiffre a 2 chiffres apres la virgule786,06549 =786,07 EUR et remplace le point du nombre decimal par la virgule-->
 <p>{{ faceSnap.price | currency: 'EUR' : 'code' }}</p>
+<p>sans configuration du CurrencyPipe , par defaut en dollars:<br/>{{ faceSnap.price  | currency}}</p>
+
+<h3> DecimalPipe |number</h3>
+<p> DecimalPipe pour arrondir à l entier le plus proche avec number configuration 1 chiffre au minimum avant la virgule, et au minimin 0 chiffres et au maximum 0 chiffres apres la virgule (le dernier chiffre sera arrondi au plus proche) <br/>{{ faceSnap.price  | number:'1.0-0'}}</p>
+
+<p> DecimalPipe avec number configuration 1 chiffre au minimum avant la virgule, et au minimin 0 chiffres et au maximum 4 chiffres apres la virgule (le dernier chiffre sera arrondi au plus proche)<br/>{{ faceSnap.price  | number:'1.0-4'}}</p>
+
+<h3> Percent Pipe |number</h3>
 
 
 
