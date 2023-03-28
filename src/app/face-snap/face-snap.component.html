@@ -1,7 +1,12 @@
 <div class="face-snap-card" [ngClass]="{'face-snap-card--snapped': faceSnap.snaps > 0}">
     <!-- ajout dans le DOM du contenu du component avec la string interpolation avec les doubles accolades-->
+    <!-- ajoute du TitleCasePipe our le formatage de l affichage du titre-->
     <h2>{{faceSnap.title | titlecase}}</h2>
-    <p>Mis en ligne le {{faceSnap.createDate}}</p>
+
+    <!-- ajoute du DatePipe our le formatage de l affichage de la date avec une configuration personnalisée
+    les deux point : de date implemente l arguments la configuration de DatePipe , qui n est pas le cas pour les heures-->
+    <p>Mis en ligne le {{faceSnap.createDate | date: "d MMMM yyyy, à HH:mm"}}</p>
+
     <!-- ajout du contenu rl de l image avec attribute binding:  des crochet aux attributs html car les valeurs des propriétés du faceSnapcomponent ne seront pas toujous des string
     comme pour imageUrl et title. Au lieu de melanger les types de valeur de ces attribut les crochet permettent une syntaxe unique
     Angular associe les valeurs des propriétés TypeScript aux attributs de l'élément HTML, et vous avez une image qui s'affiche ! -->
