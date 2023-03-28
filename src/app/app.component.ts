@@ -18,14 +18,16 @@ export class AppComponent implements OnInit {
         createDate: new Date(), 
         snaps: 0,
         imageUrl: "../../assets/book.jpg",
-        location: "Paris"
+        location: "Paris",
+        price: 56.45489465
       },
       {
         title: "2eme instance",
         description: "description test 2eme instance",
         createDate: new Date(), 
         snaps: 0, 
-        imageUrl: "../../assets/book-antique.jpg",  
+        imageUrl: "../../assets/book-antique.jpg", 
+        price: 47.895356 
          
       },
       {
@@ -34,7 +36,9 @@ export class AppComponent implements OnInit {
         createDate: new Date(), 
         snaps: 0, 
         imageUrl: "../../assets/books.jpg",
-        location: "Paris"
+        location: "Paris",
+        price: 798865.065595
+
       },
       {
         title: "4eme instance", 

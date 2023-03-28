@@ -43,6 +43,7 @@ export class FaceSnap {
             snaps!: number;
             imageUrl!: string;
             location?: string; 
+            price?: number;
             //propriétés optionnelles qui ne sera pas une propriété requise qui provoque une erreur si elle n est pas indiqué dans l 'objet facesnap que nous allons recree mais sans instance(plus de constrcutor)
             //la class sans le constructor sera une class type pour les objets facesnap que nous allé crée a partir de ce type class
 
