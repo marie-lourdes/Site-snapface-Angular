@@ -10,18 +10,18 @@ import {FaceSnapsService} from "../services/face-snaps.service"
   styleUrls: ['./face-snap-list.component.scss']
 })
 export class FaceSnapListComponent implements OnInit {
-  mySnaps!: FaceSnap[]; // tableau de type  FaceSnap class model de données
+  // la classe est un type de donnée, s ajoute un tableau de type class, un tableau qui utlise le type class FaceSnap dans le principe du mot clé interface a la place de class pour le model FaceSnap
+  listFaceSnaps!: FaceSnap[]; // tableau de type  FaceSnap class model de données
 
   // injection de dependance avec le constructor et le modificateur d acces private
   //le constructor declare et initialise  l argument faceSnapservice
   //avec le modificateur d acces private, l argument faceSnapService du constructor est declaré aussi en tant que propriété de la class
   constructor( private faceSnapsService: FaceSnapsService){}
-  // la classe est un type de donnée, s ajoute un tableau de type class, un tableau qui utlise le type class FaceSnap dans le principe du mot clé interface a la place de class pour le model FaceSnap
-  ngOnInit():void{
-    
-    
+
+  ngOnInit() {
+    this.listFaceSnaps = this.faceSnapsService.mySnaps;
+    console.log("snap model", this.listFaceSnaps); 
   }
-  
+ 
 }  
 
-//console.log("snap model", FaceSnapListComponent.mySnaps); 
