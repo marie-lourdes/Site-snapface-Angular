@@ -53,6 +53,5 @@ export class FaceSnapsService {
           snaps: 0, 
           imageUrl:"../../assets/book-desk.jpg" 
         }
-      ]
-
+    ]
 }
