@@ -9,6 +9,7 @@ import {FaceSnapsService} from "../services/face-snaps.service"
   templateUrl: './face-snap-list.component.html',
   styleUrls: ['./face-snap-list.component.scss']
 })
+
 export class FaceSnapListComponent implements OnInit {
   // la classe est un type de donnée, s ajoute un tableau de type class, un tableau qui utlise le type class FaceSnap dans le principe du mot clé interface a la place de class pour le model FaceSnap
   listFaceSnaps!: FaceSnap[]; // tableau de type  FaceSnap class model de données
@@ -22,6 +23,5 @@ export class FaceSnapListComponent implements OnInit {
     this.listFaceSnaps = this.faceSnapsService.mySnaps;
     console.log("snap model", this.listFaceSnaps); 
   }
- 
 }  
 

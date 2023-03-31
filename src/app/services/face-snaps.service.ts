@@ -9,6 +9,7 @@ import {FaceSnap} from '../models/face-snap.model'
 // les services n ont pas de methode ngOnInit car ne sont pas instancier de la meme maniere que les component
 // on declare et on initialise le service dans la meme expression sans le bang ! qui promet une initialisation ulterieur
 export class FaceSnapsService {
+  //centralisation des données FaceSnaps dans le service
     mySnaps: FaceSnap[] = [
         {
           title: "test titre class",
@@ -54,4 +55,10 @@ export class FaceSnapsService {
           imageUrl:"../../assets/book-desk.jpg" 
         }
     ]
+
+    //centralisation des methodes relatives au données FaceSnaps dans le service
+    // creation de la methode pour recuperer les données facesnap a utiliser dans les compoents qui en ont besoin tel que FaceSnapListComponent
+    getAllFaceSnaps() {
+      return this.mySnaps;
+    }
 }
