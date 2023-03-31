@@ -59,7 +59,7 @@ export class FaceSnapsService {
 
     //centralisation des methodes relatives au données FaceSnaps dans le service
     // creation de la methode pour recuperer les données facesnap a utiliser dans les compoents qui en ont besoin tel que FaceSnapListComponent
-    getAllFaceSnaps() {
+    getAllFaceSnaps():FaceSnap[] {
       return this.mySnaps;
     }
 }
