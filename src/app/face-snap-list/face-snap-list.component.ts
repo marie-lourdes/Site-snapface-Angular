@@ -20,7 +20,7 @@ export class FaceSnapListComponent implements OnInit {
   constructor( private faceSnapsService: FaceSnapsService){}
 
   ngOnInit() {
-    this.listFaceSnaps = this.faceSnapsService.mySnaps;
+    this.listFaceSnaps = this.faceSnapsService.getAllFaceSnaps();
     console.log("snap model", this.listFaceSnaps); 
   }
 }  

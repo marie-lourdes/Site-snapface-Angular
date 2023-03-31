@@ -1,4 +1,5 @@
-import {Injectable} from '@angular/core';
+import {Injectable} from '@angular/core'; 
+// deuxieme alternative plus recent import de la fonction "inject", avec la creation non pas d une class mais d une fonction comme service qui apelle inject()
 import {FaceSnap} from '../models/face-snap.model'
 
 // Le decorateur declare la classe comme etant un service, specifiant que le service est enregistré à la racine de l application
