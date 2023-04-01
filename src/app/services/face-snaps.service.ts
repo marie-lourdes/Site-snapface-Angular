@@ -13,6 +13,7 @@ export class FaceSnapsService {
   //centralisation des données FaceSnaps dans le service
     mySnaps: FaceSnap[] = [
         {
+          id: 1,
           title: "test titre class",
           description: "description class model",
           createDate: new Date(), 
@@ -22,6 +23,7 @@ export class FaceSnapsService {
           price: 56.45489465
         },
         {
+          id: 2,
           title: "2eme instance",
           description: "description test 2eme instance",
           createDate: new Date(), 
@@ -31,6 +33,7 @@ export class FaceSnapsService {
            
         },
         {
+          id: 3,
           title:"3eme instance", 
           description:"description test 3eme instance",
           createDate: new Date(), 
@@ -41,6 +44,7 @@ export class FaceSnapsService {
     
         },
         {
+          id: 4,
           title: "4eme instance", 
           description:"description test 4eme instance",
           createDate: new Date(), 
@@ -49,6 +53,7 @@ export class FaceSnapsService {
           location: "montagne" 
         },
         {
+          id: 5,
           title:"description test 5eme instance",
           description:"description test 5me instance",
           createDate: new Date(), 

@@ -37,6 +37,7 @@ export class FaceSnap {
         /*REFACTORING: de la class sans le constructor qui comporte trop d argument et ajout de propriétés optionnelles avec le point d interrogation*/
 
         //on ajoute a nouveau le bang ! pour promettre a typescript que nous allons initialiser les valeurs car plus de constructor pour initialiser les propriété
+            id!: number; //id:pour identifier chaque facesnap depuis le FaceSnapServices lors de l incrementation avec la methode d evenemnt du bouton
             title!: string;
             description!: string;
             createDate!: Date;
