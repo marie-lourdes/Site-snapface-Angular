@@ -1,6 +1,7 @@
 // import de l interface OnInit pour utliser la methode ngOnInit() pour initialiser les propriétés de FaceSnapComponent
 import { Component, OnInit, Input} from '@angular/core'; 
 import { FaceSnap} from '../models/face-snap.model';
+import { FaceSnapsService} from '../services/face-snaps.service';
 
 @Component({
   selector: 'app-face-snap',
@@ -22,6 +23,8 @@ export class FaceSnapComponent  implements OnInit {
   // on garde le bouton et le snapped boolean pour tous les faceSnap et on a enlevé les autres propriétes qui seront personnalisé avec les instances du model
   snapped!: boolean; 
   buttonText!: string;
+
+  constructor(private faceSnapsService: FaceSnapsService) {}
  
 //Initialisation des propriétés avec la methode ngOnInit()
   ngOnInit() {
@@ -36,6 +39,8 @@ export class FaceSnapComponent  implements OnInit {
   //methode pour ecouter l evenement click du boutton addsnap
   //la nomenclature veut que les methodes qui ecoute les evènement commence par on
    onSnap() {
+   
+   /* 
         console.log(this.snapped);
         // evenement au click et verification de l image si elle est deja snapped et selon, on effectue une modication du texte du bouton avec le changement de valeur par defaut de this.snapped sur false
             this.buttonText = this.snapped ? "Oops!yet snapped" : "oh snaps";
@@ -49,8 +54,9 @@ export class FaceSnapComponent  implements OnInit {
           this.snapped = true;
           console.log("button texte",this.buttonText);
         } 
-   
+     */
   } 
+
   onButtonClick() {
      this.faceSnap.snaps++;
   }

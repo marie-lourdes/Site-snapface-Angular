@@ -67,4 +67,15 @@ export class FaceSnapsService {
     getAllFaceSnaps():FaceSnap[] {
       return this.mySnaps;
     }
+
+    //methode snapFaceSnapById
+    snapFaceSnapById(mySnapId: number): void {
+      //find renvoit undefined si il ne trouve pas l element correspondant à la condition
+      const faceSnap = this.mySnaps.find(snap => snap.id === mySnapId);
+      if (faceSnap) {
+          faceSnap.snaps++;
+      } else {
+          throw new Error('FaceSnap not found!');
+      }
+  }
 }
