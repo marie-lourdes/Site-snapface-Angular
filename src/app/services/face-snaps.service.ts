@@ -64,6 +64,7 @@ export class FaceSnapsService {
 
     //centralisation des methodes relatives au données FaceSnaps dans le service
     // creation de la methode pour recuperer les données facesnap a utiliser dans les compoents qui en ont besoin tel que FaceSnapListComponent
+    //declare la le type de retour de la fonction qui est FaceSnap[]
     getAllFaceSnaps():FaceSnap[] {
       return this.mySnaps;
     }
@@ -78,7 +79,6 @@ export class FaceSnapsService {
           throw new Error('FaceSnap not found!');
       }
     }
-
      //methode unsnapFaceSnapById
      unsnapFaceSnapById(mySnapId: number): void {
       //find renvoit undefined si il ne trouve pas l element correspondant à la condition
@@ -89,4 +89,5 @@ export class FaceSnapsService {
           throw new Error('FaceSnap not found!');
       }
     }
+   
 }
