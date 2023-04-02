@@ -69,6 +69,22 @@ export class FaceSnapsService {
       return this.mySnaps;
     }
 
+    /*REFACTORISATION: des fonctions snapfaceById et unsnapById en une seule fonction de verification de l id sans l incrementation
+    et la desincrementation qui sera une methode.*/
+    //le but etant de ne pas repeter les bloc de code if else des deux methodes snap et unsanpFaceSnapByid et d avoir une fonction ou methode qui ne fasse q une seuele tache
+    //pour respecter les principes de developement DRY et maintenabilité du code
+
+    getFaceSnapById (mySnapId: number):FaceSnap { //deeclaration du type de retour de la methode qui sera un FaceSnap de type class modele de donnée
+       //find renvoit undefined si il ne trouve pas l element correspondant à la condition
+       const faceSnap = this.mySnaps.find(snap => snap.id === mySnapId);
+       if (!faceSnap) {
+        throw new Error('FaceSnap not found!');      
+       } else {
+          return faceSnap; 
+       }
+
+    }
+    /*
     //methode snapFaceSnapById
     snapFaceSnapById(mySnapId: number): void {
       //find renvoit undefined si il ne trouve pas l element correspondant à la condition
@@ -89,5 +105,5 @@ export class FaceSnapsService {
           throw new Error('FaceSnap not found!');
       }
     }
-   
+  */ 
 }
