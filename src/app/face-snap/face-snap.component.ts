@@ -32,24 +32,21 @@ export class FaceSnapComponent  implements OnInit {
   //c'est moins maintenable , dans appComponent on va creer les instance et il suffit d injecter d autres balise personnalisé de facesnap component
   // et changer le nom de l instance cree dans appComponent dans l attribute binding de la balise de facesnapcomponent dans le parent appcomponent html
   //Qaund au element html du component on ne  cree pas de div supplemenataire , juste la valeur de la propriété facesnap qui change et sera l instance propre a cette balise avec ses propres valeur injecteur depuis le parent AppComponent
-   /*this.snapped = false; */
+   this.snapped = false; 
    this.buttonText = "oh snaps";    
   }
 
   //methode pour ecouter l evenement click du boutton addsnap
   //la nomenclature veut que les methodes qui ecoute les evènement commence par on
    onSnap() {
-
     this.buttonText = this.snapped ? "Oops!yet snapped" : "oh snaps";
     if(this.snapped) {
       this.faceSnapsService.unsnapFaceSnapById(this.faceSnap.id); 
       this.snapped = false;
-
     } else {
       this.faceSnapsService.snapFaceSnapById(this.faceSnap.id); //on passe en argument l id du facesnap avec les valeur recuperé de FaceSnapListComponent avec l attribute binding de @input faceSnap dans le template de FaceSnapListComponent 
       this.snapped = true;
       console.log("button texte",this.buttonText);
-
     }
    
    /*FONCTION ONSNAP() SANS LES METHODES SNAP ET UNSNAP CENTRALISÉS DANS LE FACESNAPSERVICES
@@ -75,4 +72,9 @@ export class FaceSnapComponent  implements OnInit {
   onButtonClick() {
     this.faceSnapsService.snapFaceSnapById(this.faceSnap.id)
   }
+
+  /* onButtonClick() {
+    this.faceSnap.snap++
+  }
+  */
 }
