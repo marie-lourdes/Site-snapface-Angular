@@ -73,6 +73,6 @@ export class FaceSnapComponent  implements OnInit {
   } 
 
   onButtonClick() {
-     this.faceSnap.snaps++;
+    this.faceSnapsService.snapFaceSnapById(this.faceSnap.id)
   }
 }
