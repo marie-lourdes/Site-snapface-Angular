@@ -3,7 +3,7 @@ import {Routes, RouterModule} from "@angular/router";
 
 import {FaceSnapListComponent} from "./face-snap-list/face-snap-list.component";
 
-//declaration des routes avec le path et les components à afficher avec l objet Routes
+//declaration et initialisation des routes avec le path et les components à afficher avec le type d objet Routes
 const routes: Routes = [
     {path:"facesnaps", component: FaceSnapListComponent}
 ]
@@ -12,12 +12,11 @@ const routes: Routes = [
 //et( reexporte du RouterModule configuré)
 @NgModule({
     imports:[
-        RouterModule.forRoot(routes)// configuration du RouterModule et on enregistre les routes à la racine
+        RouterModule.forRoot(routes)// configuration du RouterModule qu'on enregistre  à la racine de l application avec les routes
     ],
     exports: [
         RouterModule
     ]
-
 })
 
 export class AppRoutingModule {}
