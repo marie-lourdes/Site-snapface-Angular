@@ -12,13 +12,15 @@ import { FaceSnapComponent } from './face-snap/face-snap.component';
 //import de la methode registerlocaleData et de la local 'fr'
 import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FaceSnapListComponent,
-    FaceSnapComponent 
+    FaceSnapComponent,
+    LandingPageComponent 
   ],
   imports: [
     BrowserModule,
