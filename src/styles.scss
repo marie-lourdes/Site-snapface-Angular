@@ -3,3 +3,10 @@
 * {
     font-family: Roboto, Helvetica, sans-serif;
 }
+body {
+    min-height: 100vh;
+}
+main {
+    display: flex;
+    justify-content: center;      
+}

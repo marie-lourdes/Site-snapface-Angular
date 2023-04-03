@@ -1,0 +1,32 @@
+
+.landing-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 800px;
+    .landing-block_img {
+       position: relative;
+       width: 100%;
+        &::before {
+            content: "SnapFace";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            color: black;
+            font-weight: 900;
+            font-size: 2rem;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+        img {
+            width: 100%;     
+        }
+    }
+    
+}
