@@ -85,10 +85,19 @@ export class FaceSnapsService {
        }
     }
 
-    // refactorisation1 de la methode snapFaceSnapById avec les operateur ternaires
+    /* refactorisation1 de la methode snapFaceSnapById avec les operateur ternaires et le snapType
     // qui permettra de snap et unsnapper en appelant egalement la methode getFaceSnapById
 
     snapFaceSnapById(faceSnapId: number, snapType: string): void {
+      const faceSnap = this.getFaceSnapById(faceSnapId);
+      snapType === 'snap' ? faceSnap.snaps++ : faceSnap.snaps--;
+  }*/
+
+     // refactorisation2 de la methode snapFaceSnapById en ajoutant Les literal Types
+    // qui permettra de snap et unsnapper en appelant egalement la methode getFaceSnapById
+    // en limitant les ereurs et le type de snapType
+
+    snapFaceSnapById(faceSnapId: number, snapType: "snap" | "unsnap"): void {
       const faceSnap = this.getFaceSnapById(faceSnapId);
       snapType === 'snap' ? faceSnap.snaps++ : faceSnap.snaps--;
   }
