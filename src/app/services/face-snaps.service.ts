@@ -74,16 +74,25 @@ export class FaceSnapsService {
     //le but etant de ne pas repeter les bloc de code if else des deux methodes snap et unsanpFaceSnapByid et d avoir une fonction ou methode qui ne fasse q une seuele tache
     //pour respecter les principes de developement DRY et maintenabilité du code
 
-    getFaceSnapById (mySnapId: number):FaceSnap { //deeclaration du type de retour de la methode qui sera un FaceSnap de type class modele de donnée
+    //refactorisation et creation de la methode getFaceSnapById () pour la verification de l id du FaceSnap et retourne si il existe le facesnap
+    getFaceSnapById (faceSnapId: number):FaceSnap { //deeclaration du type de retour de la methode qui sera un FaceSnap de type class modele de donnée
        //find renvoit undefined si il ne trouve pas l element correspondant à la condition
-       const faceSnap = this.mySnaps.find(snap => snap.id === mySnapId);
+       const faceSnap = this.mySnaps.find(snap => snap.id === faceSnapId);
        if (!faceSnap) {
         throw new Error('FaceSnap not found!');      
        } else {
           return faceSnap; 
        }
-
     }
+
+    // refactorisation1 de la methode snapFaceSnapById avec les operateur ternaires
+    // qui permettra de snap et unsnapper en appelant egalement la methode getFaceSnapById
+
+    snapFaceSnapById(faceSnapId: number, snapType: string): void {
+      const faceSnap = this.getFaceSnapById(faceSnapId);
+      snapType === 'snap' ? faceSnap.snaps++ : faceSnap.snaps--;
+  }
+
     /*
     //methode snapFaceSnapById
     snapFaceSnapById(mySnapId: number): void {
