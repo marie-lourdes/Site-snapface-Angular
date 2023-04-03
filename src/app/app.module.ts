@@ -13,7 +13,6 @@ import { FaceSnapComponent } from './face-snap/face-snap.component';
 import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
 
-
 @NgModule({
   declarations: [
     AppComponent,
