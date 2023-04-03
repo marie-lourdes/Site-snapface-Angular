@@ -41,10 +41,10 @@ export class FaceSnapComponent  implements OnInit {
    onSnap() {
     this.buttonText = this.snapped ? "Oops!yet snapped" : "oh snaps";
     if(this.snapped) {
-      this.faceSnapsService.unsnapFaceSnapById(this.faceSnap.id); 
+      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id,"unsnap"); 
       this.snapped = false;
     } else {
-      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id); //on passe en argument l id du facesnap avec les valeur recuperé de FaceSnapListComponent avec l attribute binding de @input faceSnap dans le template de FaceSnapListComponent 
+      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id,"snap"); //on passe en argument l id du facesnap avec les valeur recuperé de FaceSnapListComponent avec l attribute binding de @input faceSnap dans le template de FaceSnapListComponent 
       this.snapped = true;
       console.log("button texte",this.buttonText);
     }
@@ -70,7 +70,7 @@ export class FaceSnapComponent  implements OnInit {
   } 
 
   onButtonClick() {
-    this.faceSnapsService.snapFaceSnapById(this.faceSnap.id)
+    this.faceSnapsService.snapFaceSnapById(this.faceSnap.id,"snap")
   }
 
   /* onButtonClick() {
