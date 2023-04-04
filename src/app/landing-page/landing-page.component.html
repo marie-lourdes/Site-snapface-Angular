@@ -10,3 +10,26 @@
         </div>
     </div>
 </main>
+
+<!--***ROUTERlINK***
+    **LINK STATIC**
+    Given a route configuration [{ path: 'user/:name', component: UserCmp }],
+     the following creates a static link to the route: 
+     <a routerLink="/user/bob">link to user component</a> 
+    
+    **LINK DYNAMIC 
+     For a dynamic link, pass an array of path segments, followed by the params for each segment.
+    For example, ['/team', teamId, 'user', userName, {details: true}] generates a link to /team/11/user/bob;details=true.
+   
+    **LINK STATIC COMBINÉ AVEC LES LINK DYNAMIC
+    Multiple static segments can be merged into one term and combined with dynamic segments. For example, 
+    ['/team/11/user', userName, {details: true}]
+    
+    **PATH SEGMENT**
+    The first segment name can be prepended with /, ./, or ../.
+
+    If the first segment begins with /, the router looks up the route from the root of the app.
+    If the first segment begins with ./, or doesn't begin with a slash, the router looks in the children of the current activated route.
+    If the first segment begins with ../, the router goes up one level in the route tree.
+
+-->

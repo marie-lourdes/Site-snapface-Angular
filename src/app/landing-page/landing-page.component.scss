@@ -30,3 +30,12 @@
     }
     
 }
+/*.landing-block {
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+
+  //transform se deplace depuis le centre de l element et selon la taille de l element si c est en pourcentage
+  //transform s applique selon la position d origine (ici en absolute et 50%,50%  et de cette position applique le translate depuis le centre de l element et non du bord gauche comme les autres position: absolute, relative 
+}
