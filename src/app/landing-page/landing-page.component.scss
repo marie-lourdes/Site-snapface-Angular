@@ -1,4 +1,3 @@
-
 .landing-block {
     display: flex;
     justify-content: center;
@@ -6,7 +5,7 @@
     flex-direction: column;
     width: 50%;
     height: 800px;
-    .landing-block_img {
+    &_img {
        position: relative;
        width: 100%;
         &::before {
@@ -26,10 +25,14 @@
         }
         img {
             width: 100%;     
-        }
+        }     
     }
-    
+    &_link {
+        width: 100%;
+        text-align: center;
+    }   
 }
+
 /*.landing-block {
 position: absolute;
   top: 50%;
@@ -39,3 +42,4 @@ position: absolute;
   //transform se deplace depuis le centre de l element et selon la taille de l element si c est en pourcentage
   //transform s applique selon la position d origine (ici en absolute et 50%,50%  et de cette position applique le translate depuis le centre de l element et non du bord gauche comme les autres position: absolute, relative 
 }
+*/
