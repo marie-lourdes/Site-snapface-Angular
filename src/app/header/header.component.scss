@@ -1,28 +1,37 @@
 header {
-    text-align: center;
-    background: #EEE;
-    padding: 10px;
+  text-align: center;
+  background: #EEE;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  nav {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    nav {
+    justify-content: space-between;
+    width: 10%;
+    ul {
       display: flex;
       justify-content: space-between;
-      width: 10%;
-      a {
+      align-items: baseline;
+      width: 100%;
+      padding-left: 0;
+      li {
+        list-style: none;
+      }
+      li a {
         text-decoration: none;
         color: #333;
         &:hover {
           text-decoration: underline;
         } 
         &.is-active {
-          // plus specifique ds le nesting avec sa class, si on le declare hors du nesting du seleceur "a" , la class est moins specifique que le selececteur a à l etat neutre et le style de la class est ecrasé par la specificité du selecteur "a" à l etat neutre du à l indentation qui le rend tres specifique
+          // plus specifique ds le nesting avec sa class, si on le declare hors du nesting du seleceur "a" , la class est moins specifique que le selececteur a à l etat neutre et le style de la class est ecrasé par la specificité du selecteur "a" à l etat neutre du à l indentation du selcetur "a" neutre qui le rend tres specifique
           color: #666;
           text-decoration: underline;
         }                
       }
-       
     }
-  }
+  } 
+}
 
