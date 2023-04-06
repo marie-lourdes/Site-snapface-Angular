@@ -2,6 +2,8 @@
     <h1> Application SNAPFACE</h1>
     <nav>
         <ul>
+            <!-- Ajout de l extension de routerLinkActiveOptions avec l objet de configuration en indiquant que la class du routerLinkActive
+            s applique uniquement sur ce path exact , si on est sur route enfant /facesnaps, le style ne s applique pas a la route parent home "/"-->
             <li><a routerLink="" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
             <li><a routerLink="facesnaps" routerLinkActive="is-active">FaceSnaps</a>    </li>
         </ul>     
