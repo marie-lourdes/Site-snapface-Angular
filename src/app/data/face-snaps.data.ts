@@ -7,7 +7,7 @@ export const faceSnaps: FaceSnap[]= [
       description: "description class model",
       createDate: new Date(), 
       snaps: 0,
-      imageUrl: "../../assets/book.jpg",
+      imageUrl: "../../assets/images/book.jpg",
       location: "Paris",
       price: 56.45489465
     },
@@ -17,7 +17,7 @@ export const faceSnaps: FaceSnap[]= [
       description: "description test 2eme instance",
       createDate: new Date(), 
       snaps: 0, 
-      imageUrl: "../../assets/book-antique.jpg", 
+      imageUrl: "../../assets/images/book-antique.jpg", 
       price: 47.895356 
        
     },
@@ -27,7 +27,7 @@ export const faceSnaps: FaceSnap[]= [
       description:"description test 3eme instance",
       createDate: new Date(), 
       snaps: 0, 
-      imageUrl: "../../assets/books.jpg",
+      imageUrl: "../../assets/images/books.jpg",
       location: "Paris",
       price: 798865.065595
 
@@ -38,7 +38,7 @@ export const faceSnaps: FaceSnap[]= [
       description:"description test 4eme instance",
       createDate: new Date(), 
       snaps: 0, 
-      imageUrl:"../../assets/book-library.jpg",
+      imageUrl:"../../assets/images/book-library.jpg",
       location: "montagne" 
     },
     {
@@ -47,6 +47,6 @@ export const faceSnaps: FaceSnap[]= [
       description:"description test 5me instance",
       createDate: new Date(), 
       snaps: 0, 
-      imageUrl:"../../assets/book-desk.jpg" 
+      imageUrl:"../../assets/images/book-desk.jpg" 
     }
 ]
