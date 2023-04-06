@@ -17,12 +17,15 @@ header {
         width: 100%;
         padding-left:0;
         li {
-          list-style: none;
-          a {
-            text-decoration: none;
-          }
+          list-style: none;   
         }
-
+        li a {
+          text-decoration: none;
+          color: #333;
+          &:hover {
+            text-decoration: underline;
+          }                 
+        }
       }
     }
   }
