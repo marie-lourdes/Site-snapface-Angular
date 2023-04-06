@@ -10,10 +10,7 @@ header {
       display: flex;
       justify-content: center;
       width: 10%;
-      li {
-        list-style: none;   
-      }
-      li a {
+      a {
         text-decoration: none;
         color: #333;
         &:hover {
@@ -25,9 +22,6 @@ header {
   }
 
   .is-active {
-  
-color: red;
+    color: red;
     text-decoration: underline;
-   
-    
   }
