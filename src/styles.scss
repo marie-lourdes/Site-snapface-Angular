@@ -10,3 +10,17 @@ main {
     display: flex;
     justify-content: center;      
 }
+
+button {
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    border: none;
+    box-shadow: lightgray 3px 3px 7px; 
+    margin-right: 20px;
+    appearance: none;   
+    &:active {        
+        transform: translate(1px, 1px);
+        box-shadow: lightgray 0 0 5px;
+    }     
+}
