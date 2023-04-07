@@ -1,0 +1,39 @@
+.face-snap-card {
+    display: flex;
+    flex-direction: column;
+    margin: 3%;
+    width: 100%;
+    background-color: transparent;
+   
+    padding: 2rem;
+    box-sizing: border-box;
+    box-shadow: lightgray 4px 4px 20px;
+    img {
+        width: 100%;
+        min-height: 300px;
+        max-height: 300px;
+    }
+    span, button {
+        font: {
+            weight: 500; 
+            size: 1rem;   
+        }
+    } 
+    /*bouton avec l etoile qui grossit au nombre de snap qui augmentent au clic et devient de plus en plus vert avec le style dynamic ngstyle dans le template*/
+    .button--bg-color {
+        background-color:#fff;
+        padding: 0.5rem 2rem;
+    } 
+    /* class crée avec la directive ngClass si snapped > 0 le style est appliqué*/
+    &--snapped {
+        background-color: rgba(lightgreen, 0.4);
+        color: darkgreen;
+        button {
+          box-shadow: lightgreen 3px 3px 7px;
+          color: darkgreen;
+          &:active {
+            box-shadow: red 1px 0 5px;
+          }
+        }
+      }
+}
