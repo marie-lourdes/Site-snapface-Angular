@@ -22,7 +22,7 @@ export class SingleFaceSnapComponent  implements OnInit {
   // on garde le bouton et le snapped boolean pour tous les faceSnap et on a enlevé les autres propriétes qui seront personnalisé avec les instances du model
   snapped!: boolean; 
   buttonText!: string;
-
+  
   constructor(private faceSnapsService: FaceSnapsService) {}
  
 //Initialisation des propriétés avec la methode ngOnInit()
