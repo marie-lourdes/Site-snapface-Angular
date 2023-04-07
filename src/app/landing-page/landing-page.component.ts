@@ -9,9 +9,10 @@ import { Router } from "@angular/router"
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent {
-//injection de dependance pour utiliser le Router
-constructor( private router: Router){}
+  //injection de dependance pour utiliser le Router
+  constructor( private router: Router){}
+  // navigation programmatique avec la Router.navigateByUrl() dans la methode onContinue() appelé dans l event binding du bouton dans le template
   onContinue():void {
-   
+    this.router.navigateByUrl("facesnaps")
   }
 }
