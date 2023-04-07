@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 //import du model de donnée facesnap
 import { FaceSnap} from '../models/face-snap.model';
 //import du service facesnapservice qui partage les données des facesnap
-import {FaceSnapsService} from "../services/face-snaps.service"
+import { FaceSnapsService } from "../services/face-snaps.service"
 
 @Component({
   selector: 'app-face-snap-list',

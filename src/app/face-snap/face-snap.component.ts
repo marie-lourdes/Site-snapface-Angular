@@ -1,7 +1,7 @@
 // import de l interface OnInit pour utliser la methode ngOnInit() pour initialiser les propriétés de FaceSnapComponent
-import { Component, OnInit, Input} from '@angular/core'; 
-import { FaceSnap} from '../models/face-snap.model';
-import { FaceSnapsService} from '../services/face-snaps.service';
+import { Component, OnInit, Input } from '@angular/core'; 
+import { FaceSnap } from '../models/face-snap.model';
+import { FaceSnapsService } from '../services/face-snaps.service';
 
 @Component({
   selector: 'app-face-snap',

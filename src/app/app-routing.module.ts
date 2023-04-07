@@ -1,7 +1,7 @@
-import {NgModule} from "@angular/core";
-import {Routes, RouterModule} from "@angular/router";
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
-import {FaceSnapListComponent} from "./face-snap-list/face-snap-list.component";
+import { FaceSnapListComponent } from "./face-snap-list/face-snap-list.component";
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 
 //declaration et initialisation des routes avec le path et les components à afficher avec le type d objet Routes
