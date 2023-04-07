@@ -1,5 +1,6 @@
 // import de l interface OnInit pour utliser la methode ngOnInit() pour initialiser les propriétés de FaceSnapComponent
 import { Component, OnInit, Input } from '@angular/core'; 
+import { ActivatedRoute } from "@angular/router"
 import { FaceSnap } from '../models/face-snap.model';
 import { FaceSnapsService } from '../services/face-snaps.service';
 
@@ -17,20 +18,33 @@ export class SingleFaceSnapComponent  implements OnInit {
   //Pour que la propriété du child facecomponent puissent etre injecté depuis le parent nous utilisons le decorateur @input()
   //@input() va crée une sorte de champs à la class et un attribut html au FaceComponent qui sera accessible depuis le component parent
   // La valeur de ctte proprieté sera initialisé avec la valeur d une instance de classe du component parent avec l attribute binding ( de la balise personnalisé du child app-face-snap dans le template html de l AppComponent parent
-  @Input() faceSnap!: FaceSnap;
+  faceSnap!: FaceSnap;
 
   // on garde le bouton et le snapped boolean pour tous les faceSnap et on a enlevé les autres propriétes qui seront personnalisé avec les instances du model
   snapped!: boolean; 
   buttonText!: string;
   
-  constructor(private faceSnapsService: FaceSnapsService) {}
+  //Injection de dependance pour utiliser  les methode de FaceSnapService et les information de la route activée de ActivateRoute 
+  constructor(private faceSnapsService: FaceSnapsService, private route: ActivatedRoute) {}
  
 //Initialisation des propriétés avec la methode ngOnInit()
   ngOnInit() {
+   //on recupere la valeur de la proprieté id de l objet  parametre de l objet de snapshot (capture instantanée des valeurs de la route) de la route activée
+   //l'url etant une chaine de caractere , avec le type caste et l'addition + nous transformons l id de type string en number
+   //ou avec la fonction Number: const faceSnapId = Number(this.route.snapshot.params["id"] )
+   const faceSnapId = +this.route.snapshot.params["id"];
+
+   // initialisation de la propriété faceSnap sans @input (supprimée car inséré par le router <router-outlet> et non un component parent)
+   //on recuperer les données du facesnap correspondant à l id affiché dans l url de la requete du navigateur avec la methode getFaceSnapById
+   // cet methode va verifier l existence de l id et verifier si l id de l 'url qu on passe en argument correspond a l id du facesnap dans la data des facesnaps
+   this.faceSnap = this.faceSnapsService.getFaceSnapById(faceSnapId);
+
+
   // mieux vaut creer les differentes instance de la classe depuis le app parent que dans le child facesnapcomponent ici car on devrait creer d autres div de facesnap compmonent dans le html
   //c'est moins maintenable , dans appComponent on va creer les instance et il suffit d injecter d autres balise personnalisé de facesnap component
   // et changer le nom de l instance cree dans appComponent dans l attribute binding de la balise de facesnapcomponent dans le parent appcomponent html
   //Qaund au element html du component on ne  cree pas de div supplemenataire , juste la valeur de la propriété facesnap qui change et sera l instance propre a cette balise avec ses propres valeur injecteur depuis le parent AppComponent
+  
    this.snapped = false; 
    this.buttonText = "oh snaps";    
   }
