@@ -1,5 +1,7 @@
 // import de l interface OnInit pour utliser la methode ngOnInit() pour initialiser les propriétés de FaceSnapComponent
-import { Component, OnInit, Input } from '@angular/core'; 
+import { Component, Input } from '@angular/core';
+//import du router pour creer lien de maniere programmatique depuis le typescrite et non du template 
+import { Router } from "@angular/router";
 import { FaceSnap } from '../models/face-snap.model';
 import { FaceSnapsService } from '../services/face-snaps.service';
 
@@ -19,15 +21,16 @@ export class FaceSnapComponent  {
   //@input() va crée une sorte de champs à la class et un attribut html au FaceComponent qui sera accessible depuis le component parent
   // La valeur de ctte proprieté sera initialisé avec la valeur d une instance de classe du component parent avec l attribute binding ( de la balise personnalisé du child app-face-snap dans le template html de l AppComponent parent
   @Input() faceSnap!: FaceSnap;
-  
-  constructor(private faceSnapsService: FaceSnapsService) {}
+
+  constructor(private faceSnapsService: FaceSnapsService, private route: Router) {}
  
   onButtonClick() {
     this.faceSnapsService.snapFaceSnapById(this.faceSnap.id,"snap")
   }
 
+  // creation du lien programmatique avec Router.navigateByUrl dans la methode onViewMore() relié avec l evenement click du bouton dans le template
   onViewMore():void{
-
+    this.route.navigateByUrl(`facesnaps/${this.faceSnap.id}`)
   }
 
   /* onButtonClick() {
