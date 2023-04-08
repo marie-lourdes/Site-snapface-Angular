@@ -1,10 +1,10 @@
-<div class="face-snap-card" [ngClass]="{'face-snap-card--snapped': faceSnap.snaps > 0}">
+<div class="face-snap-card">
     <!-- ajout dans le DOM du contenu du component avec la string interpolation avec les doubles accolades-->
     <!-- ajoute du TitleCasePipe our le formatage de l affichage du titre-->
     <h2>{{faceSnap.title | titlecase}}</h2>
     <p>{{faceSnap.description}}</p>
   
-    <!-- fonctionalité style dynamice l etoile devient de plus en plus vert en fonction du nombre de snapsqui augmente au clic
+    <!-- fonctionalité styledynamic avec  ngStyle: l etoile devient de plus en plus vert en fonction du nombre de snapsqui augmente au clic
     le nombre de face snaps est divisé par 100 pour qu il grossit pas trop et qu on puisse voir le vert augmenter-->
     <p>
         <button class="button--bg-color" (click)="onButtonClick()" [ngStyle]="{

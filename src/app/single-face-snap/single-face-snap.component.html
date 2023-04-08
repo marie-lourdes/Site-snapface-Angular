@@ -18,11 +18,9 @@
             <button (click)="onSnap()">{{buttonText}}</button>
             <!-- fonctionalité style dynamic au clic la couleur green du rgb augmente au nombre de clic et du snaps qui augmente avec la methode onSnap()
             a partir de 50 pour le green RGB, la couleur verte est visible , plus le nombre augmente plus le texte est vert-->
-            
-            <!--<span *ngIf ="faceSnap.snaps > 0" [ngStyle]="{color:'rgb(0,'+ faceSnap.snaps +',0)'}"> {{faceSnap.snaps}}</span>-->
+             <!--<span *ngIf ="faceSnap.snaps > 0" [ngStyle]="{color:'rgb(0,'+ faceSnap.snaps +',0)'}"> {{faceSnap.snaps}}</span>-->
      
-            <span *ngIf ="faceSnap.snaps >= 0">{{faceSnap.snaps}}</span>  
-            
+            <span *ngIf ="faceSnap.snaps >= 0">{{faceSnap.snaps}}</span>         
         </p>
         <!-- fonctionalité style dynamice l etoile devient de plus en plus vert en fonction du nombre de snapsqui augmente au clic
         le nombre de face snaps est divisé par 100 pour qu il grossit pas trop et qu on puisse voir le vert augmenter-->

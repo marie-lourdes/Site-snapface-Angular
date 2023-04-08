@@ -19,11 +19,7 @@ export class FaceSnapComponent  {
   //@input() va crée une sorte de champs à la class et un attribut html au FaceComponent qui sera accessible depuis le component parent
   // La valeur de ctte proprieté sera initialisé avec la valeur d une instance de classe du component parent avec l attribute binding ( de la balise personnalisé du child app-face-snap dans le template html de l AppComponent parent
   @Input() faceSnap!: FaceSnap;
-
-  // on garde le bouton et le snapped boolean pour tous les faceSnap et on a enlevé les autres propriétes qui seront personnalisé avec les instances du model
-  snapped!: boolean; 
-  buttonText!: string;
-
+  
   constructor(private faceSnapsService: FaceSnapsService) {}
  
   onButtonClick() {
@@ -31,7 +27,7 @@ export class FaceSnapComponent  {
   }
 
   onViewMore():void{
-    
+
   }
 
   /* onButtonClick() {

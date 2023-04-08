@@ -23,17 +23,5 @@
         background-color:#fff;
         padding: 0.5rem 2rem;
     } 
-    /* class crée avec la directive ngClass si snapped > 0 le style est appliqué*/
-    &--snapped {
-        background-color: rgba(lightgreen, 0.4);
-        color: darkgreen;
-        button {
-          box-shadow: lightgreen 3px 3px 7px;
-          color: darkgreen;
-          &:active {
-            box-shadow: red 1px 0 5px;
-          }
-        }
-      }
 }
 
