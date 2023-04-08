@@ -34,27 +34,4 @@
         </p>  
     </div>
     
-    <h3> CurrencyPipe |currency</h3>
-    <!--CurrencyPipe arrondi par defaut le chiffre a 2 chiffres apres la virgule786,06549 =786,07 EUR et remplace le point du nombre decimal par la virgule-->
-    <p> currency => configuration EUR et 2eme configuration 'code' pour garder l encodage EUR au lieu du symbole €
-        {{ faceSnap.price | currency: 'EUR' : 'code' }}</p>
-    <p> currency => configuration EUR  symbole €{{ faceSnap.price | currency: 'EUR'}}</p>
-    <p>sans configuration du CurrencyPipe , par defaut en dollars:<br/>{{ faceSnap.price  | currency}}</p>
-    
-    <h3> DecimalPipe |number</h3>
-    <!-- Notre locale est en francais, donc les nombres auront des espaces entre eux avec les pipes et une virgule ce qui n est pas le cas en anglais -->
-    <p> DecimalPipe number sans configuration, par defaut, arrondi au troisième chiffres apres la virgule (le dernier chiffre sera arrondi au plus proche) <br/>
-        {{ faceSnap.price  | number}}</p>
-    <p> DecimalPipe avec number configuration 1 chiffre au minimum avant la virgule, et au minimin 0 chiffres et au maximum 4 chiffres apres la virgule (le dernier chiffre sera arrondi au plus proche)<br/>
-        {{ faceSnap.price  | number:'1.0-4'}}</p>
-    <p> DecimalPipe pour arrondir au nombre entier le plus proche avec number configuration 1 chiffre au minimum avant la virgule, et au minimin 0 chiffres et au maximum 0 chiffres apres la virgule (le dernier chiffre sera arrondi au plus proche) <br/>
-        {{ faceSnap.price  | number:'1.0-0'}}</p>
-       
-    <h3> PercentPipe |percent</h3>
-    <p> PercentPipe affiche un nombre entre 0 et 1 sous forme de pourcentage, arrondi par défaut à l'entier le plus proche.(0.336 = 33,6 arrondi a 34%) <br/>
-        {{ 0.336 | percent}}</p>
-        <p> PercentPipe  arrondi par défaut à l'entier si on ne souhaite pas l arrondir au nombre entier , nous pouvons configurer comme avec DecimalPipe<br/>
-            {{ 0.336  | percent: '1.0-1'}}</p>
-
-</main>
-
+ 
