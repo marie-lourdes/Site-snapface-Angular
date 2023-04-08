@@ -1,6 +1,8 @@
 // import de l interface OnInit pour utliser la methode ngOnInit() pour initialiser les propriétés de FaceSnapComponent
-import { Component, OnInit, Input } from '@angular/core'; 
+import { Component, OnInit } from '@angular/core'; 
+//import de ActivatedRoute pour recupérer les onformation de la route activée tel que le parametre 
 import { ActivatedRoute } from "@angular/router"
+
 import { FaceSnap } from '../models/face-snap.model';
 import { FaceSnapsService } from '../services/face-snaps.service';
 

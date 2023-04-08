@@ -1,56 +1,60 @@
-<div class="face-snap-card" [ngClass]="{'face-snap-card--snapped': faceSnap.snaps > 0}">
-    <!-- ajout dans le DOM du contenu du component avec la string interpolation avec les doubles accolades-->
-    <!-- ajoute du TitleCasePipe our le formatage de l affichage du titre-->
-    <h2>{{faceSnap.title | titlecase}}</h2>
+<main>
+    <div class="face-snap-card" [ngClass]="{'face-snap-card--snapped': faceSnap.snaps > 0}">
+        <!-- ajout dans le DOM du contenu du component avec la string interpolation avec les doubles accolades-->
+        <!-- ajoute du TitleCasePipe our le formatage de l affichage du titre-->
+        <h2>{{faceSnap.title | titlecase}}</h2>
+    
+        <!-- ajoute du DatePipe our le formatage de l affichage de la date avec une configuration personnalisée
+        les deux point : de date implemente l arguments la configuration de DatePipe , qui n est pas le cas pour les heures-->
+        <p>Mis en ligne le {{faceSnap.createDate | date: "d MMMM yyyy, à HH:mm"}}</p>
+    
+        <!-- ajout du contenu rl de l image avec attribute binding:  des crochet aux attributs html car les valeurs des propriétés du faceSnapcomponent ne seront pas toujous des string
+        comme pour imageUrl et title. Au lieu de melanger les types de valeur de ces attribut les crochet permettent une syntaxe unique
+        Angular associe les valeurs des propriétés TypeScript aux attributs de l'élément HTML, et vous avez une image qui s'affiche ! -->
+        <img *ngIf ="faceSnap.imageUrl" [src]="faceSnap.imageUrl" [alt]="faceSnap.title"/>
+        <p>{{faceSnap.description}}</p>
+        <p>Photo prise à {{faceSnap.location}}</p>
+        <p>
+            <button (click)="onSnap()">{{buttonText}}</button>
+            <!-- fonctionalité style dynamic au clic la couleur green du rgb augmente au nombre de clic et du snaps qui augmente avec la methode onSnap()
+            a partir de 50 pour le green RGB, la couleur verte est visible , plus le nombre augmente plus le texte est vert-->
+            
+            <!--<span *ngIf ="faceSnap.snaps > 0" [ngStyle]="{color:'rgb(0,'+ faceSnap.snaps +',0)'}"> {{faceSnap.snaps}}</span>-->
+     
+            <span *ngIf ="faceSnap.snaps >= 0">{{faceSnap.snaps}}</span>  
+            
+        </p>
+        <!-- fonctionalité style dynamice l etoile devient de plus en plus vert en fonction du nombre de snapsqui augmente au clic
+        le nombre de face snaps est divisé par 100 pour qu il grossit pas trop et qu on puisse voir le vert augmenter-->
+        <p>
+            <button class="button--bg-color" (click)="onButtonClick()" [ngStyle]="{
+                color:'rgb(0,'+ faceSnap.snaps +',0)',   
+                fontSize: 1.3 + (faceSnap.snaps/100) + 'rem'
+            }"> * </button>   
+        </p>  
+    </div>
+    
+    <h3> CurrencyPipe |currency</h3>
+    <!--CurrencyPipe arrondi par defaut le chiffre a 2 chiffres apres la virgule786,06549 =786,07 EUR et remplace le point du nombre decimal par la virgule-->
+    <p> currency => configuration EUR et 2eme configuration 'code' pour garder l encodage EUR au lieu du symbole €
+        {{ faceSnap.price | currency: 'EUR' : 'code' }}</p>
+    <p> currency => configuration EUR  symbole €{{ faceSnap.price | currency: 'EUR'}}</p>
+    <p>sans configuration du CurrencyPipe , par defaut en dollars:<br/>{{ faceSnap.price  | currency}}</p>
+    
+    <h3> DecimalPipe |number</h3>
+    <!-- Notre locale est en francais, donc les nombres auront des espaces entre eux avec les pipes et une virgule ce qui n est pas le cas en anglais -->
+    <p> DecimalPipe number sans configuration, par defaut, arrondi au troisième chiffres apres la virgule (le dernier chiffre sera arrondi au plus proche) <br/>
+        {{ faceSnap.price  | number}}</p>
+    <p> DecimalPipe avec number configuration 1 chiffre au minimum avant la virgule, et au minimin 0 chiffres et au maximum 4 chiffres apres la virgule (le dernier chiffre sera arrondi au plus proche)<br/>
+        {{ faceSnap.price  | number:'1.0-4'}}</p>
+    <p> DecimalPipe pour arrondir au nombre entier le plus proche avec number configuration 1 chiffre au minimum avant la virgule, et au minimin 0 chiffres et au maximum 0 chiffres apres la virgule (le dernier chiffre sera arrondi au plus proche) <br/>
+        {{ faceSnap.price  | number:'1.0-0'}}</p>
+       
+    <h3> PercentPipe |percent</h3>
+    <p> PercentPipe affiche un nombre entre 0 et 1 sous forme de pourcentage, arrondi par défaut à l'entier le plus proche.(0.336 = 33,6 arrondi a 34%) <br/>
+        {{ 0.336 | percent}}</p>
+        <p> PercentPipe  arrondi par défaut à l'entier si on ne souhaite pas l arrondir au nombre entier , nous pouvons configurer comme avec DecimalPipe<br/>
+            {{ 0.336  | percent: '1.0-1'}}</p>
 
-    <!-- ajoute du DatePipe our le formatage de l affichage de la date avec une configuration personnalisée
-    les deux point : de date implemente l arguments la configuration de DatePipe , qui n est pas le cas pour les heures-->
-    <p>Mis en ligne le {{faceSnap.createDate | date: "d MMMM yyyy, à HH:mm"}}</p>
+</main>
 
-    <!-- ajout du contenu rl de l image avec attribute binding:  des crochet aux attributs html car les valeurs des propriétés du faceSnapcomponent ne seront pas toujous des string
-    comme pour imageUrl et title. Au lieu de melanger les types de valeur de ces attribut les crochet permettent une syntaxe unique
-    Angular associe les valeurs des propriétés TypeScript aux attributs de l'élément HTML, et vous avez une image qui s'affiche ! -->
-    <img *ngIf ="faceSnap.imageUrl" [src]="faceSnap.imageUrl" [alt]="faceSnap.title"/>
-    <p>{{faceSnap.description}}</p>
-    <p>Photo prise à {{faceSnap.location}}</p>
-    <p>
-        <button (click)="onSnap()">{{buttonText}}</button>
-        <!-- fonctionalité style dynamic au clic la couleur green du rgb augmente au nombre de clic et du snaps qui augmente avec la methode onSnap()
-        a partir de 50 pour le green RGB, la couleur verte est visible , plus le nombre augmente plus le texte est vert-->
-        
-        <!--<span *ngIf ="faceSnap.snaps > 0" [ngStyle]="{color:'rgb(0,'+ faceSnap.snaps +',0)'}"> {{faceSnap.snaps}}</span>-->
- 
-        <span *ngIf ="faceSnap.snaps >= 0">{{faceSnap.snaps}}</span>  
-        
-    </p>
-    <!-- fonctionalité style dynamice l etoile devient de plus en plus vert en fonction du nombre de snapsqui augmente au clic
-    le nombre de face snaps est divisé par 100 pour qu il grossit pas trop et qu on puisse voir le vert augmenter-->
-    <p>
-        <button class="button--bg-color" (click)="onButtonClick()" [ngStyle]="{
-            color:'rgb(0,'+ faceSnap.snaps +',0)',   
-            fontSize: 1.3 + (faceSnap.snaps/100) + 'rem'
-        }"> * </button>   
-    </p>  
-</div>
-
-<h3> CurrencyPipe |currency</h3>
-<!--CurrencyPipe arrondi par defaut le chiffre a 2 chiffres apres la virgule786,06549 =786,07 EUR et remplace le point du nombre decimal par la virgule-->
-<p> currency => configuration EUR et 2eme configuration 'code' pour garder l encodage EUR au lieu du symbole €
-    {{ faceSnap.price | currency: 'EUR' : 'code' }}</p>
-<p> currency => configuration EUR  symbole €{{ faceSnap.price | currency: 'EUR'}}</p>
-<p>sans configuration du CurrencyPipe , par defaut en dollars:<br/>{{ faceSnap.price  | currency}}</p>
-
-<h3> DecimalPipe |number</h3>
-<!-- Notre locale est en francais, donc les nombres auront des espaces entre eux avec les pipes et une virgule ce qui n est pas le cas en anglais -->
-<p> DecimalPipe number sans configuration, par defaut, arrondi au troisième chiffres apres la virgule (le dernier chiffre sera arrondi au plus proche) <br/>
-    {{ faceSnap.price  | number}}</p>
-<p> DecimalPipe avec number configuration 1 chiffre au minimum avant la virgule, et au minimin 0 chiffres et au maximum 4 chiffres apres la virgule (le dernier chiffre sera arrondi au plus proche)<br/>
-    {{ faceSnap.price  | number:'1.0-4'}}</p>
-<p> DecimalPipe pour arrondir au nombre entier le plus proche avec number configuration 1 chiffre au minimum avant la virgule, et au minimin 0 chiffres et au maximum 0 chiffres apres la virgule (le dernier chiffre sera arrondi au plus proche) <br/>
-    {{ faceSnap.price  | number:'1.0-0'}}</p>
-   
-<h3> PercentPipe |percent</h3>
-<p> PercentPipe affiche un nombre entre 0 et 1 sous forme de pourcentage, arrondi par défaut à l'entier le plus proche.(0.336 = 33,6 arrondi a 34%) <br/>
-    {{ 0.336 | percent}}</p>
-    <p> PercentPipe  arrondi par défaut à l'entier si on ne souhaite pas l arrondir au nombre entier , nous pouvons configurer comme avec DecimalPipe<br/>
-        {{ 0.336  | percent: '1.0-1'}}</p>
