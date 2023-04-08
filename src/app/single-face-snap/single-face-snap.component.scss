@@ -11,6 +11,21 @@ main {
     padding: 2rem;
     box-sizing: border-box;
     box-shadow: lightgray 4px 4px 20px;
+    &_header {
+      display: flex;
+      justify-content: space-between;
+      .link-back {
+        background: #000;
+        color: #fff;
+        padding: 0 5%;
+        text-align: center;
+        line-height: 5rem;/* taille en fonction de la  taille de la police*/
+        appearance: none;
+        box-sizing: border-box;
+        font-size: 1.6rem;
+      }
+
+    }
     img {
         width: 100%;
         min-height: 300px;

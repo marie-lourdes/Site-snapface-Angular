@@ -2,6 +2,7 @@
 import { Component, Input } from '@angular/core';
 //import du router pour creer lien de maniere programmatique depuis le typescrite et non du template 
 import { Router } from "@angular/router";
+
 import { FaceSnap } from '../models/face-snap.model';
 import { FaceSnapsService } from '../services/face-snaps.service';
 
@@ -27,14 +28,14 @@ export class FaceSnapComponent  {
   onButtonClick() {
     this.faceSnapsService.snapFaceSnapById(this.faceSnap.id,"snap")
   }
+ 
+  /* onButtonClick() {
+    this.faceSnap.snap++
+  }
+  */
 
   // creation du lien programmatique avec Router.navigateByUrl dans la methode onViewMore() relié avec l evenement click du bouton dans le template
   onViewMore():void{
     this.route.navigateByUrl(`facesnaps/${this.faceSnap.id}`)
   }
-
-  /* onButtonClick() {
-    this.faceSnap.snap++
-  }
-  */
 }

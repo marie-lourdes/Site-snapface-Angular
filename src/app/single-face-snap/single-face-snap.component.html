@@ -2,8 +2,12 @@
     <div class="face-snap-card" [ngClass]="{'face-snap-card--snapped': faceSnap.snaps > 0}">
         <!-- ajout dans le DOM du contenu du component avec la string interpolation avec les doubles accolades-->
         <!-- ajoute du TitleCasePipe our le formatage de l affichage du titre-->
-        <h2>{{faceSnap.title | titlecase}}</h2>
-    
+        <div class="face-snap-card_header">
+            <h2>{{faceSnap.title | titlecase}}</h2>
+            <!-- Ajout d un lien static, cette fois on precise le slash qui rendra ce lien absolue, sans le slash, lerouterLink considere que c est un enfant de la route active de SingleFaceSnapComponent-->
+            <a class="link-back" routerLink="/facesnaps">Back</a>
+        </div>
+        
         <!-- ajoute du DatePipe our le formatage de l affichage de la date avec une configuration personnalisée
         les deux point : de date implemente l arguments la configuration de DatePipe , qui n est pas le cas pour les heures-->
         <p>Mis en ligne le {{faceSnap.createDate | date: "d MMMM yyyy, à HH:mm"}}</p>
