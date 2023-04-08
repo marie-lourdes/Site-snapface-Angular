@@ -11,17 +11,19 @@
         &::before {
             content: "SnapFace";
             position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            color: black;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width:30%;
+            height: 15%;
+            color: darken(#3F2A1E,5%) ;
             font-weight: 900;
             font-size: 2rem;
             text-transform: uppercase;
             display: flex;
             justify-content: center;
             align-items: center; 
+            background: lighten(rgba(#000,0.4),15%);
         }
         img {
             width: 100%;     
@@ -30,6 +32,13 @@
     &_link {
         width: 100%;
         text-align: center;
+        margin-top: 5%;
+        button {
+            padding: 2% 5%;
+            appearance: none;
+            font-weight: 500;
+            font-size: 1rem;
+        }
     }   
 }
 
